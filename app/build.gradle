@@ -8,7 +8,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.jadsalhani.proximiedatafeed"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -49,10 +49,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-beta03'
-    implementation group: 'androidx.cardview', name: 'cardview', version: '1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     // Android Material
     implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+    // Display images
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Unit Test Requirements
     testImplementation 'junit:junit:4.12'

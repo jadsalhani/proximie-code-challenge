@@ -1,7 +1,6 @@
-package com.jadsalhani.proximiedatafeed
+package com.jadsalhani.proximiedatafeed.application
 
 import android.app.Application
-import com.jadsalhani.proximiedatafeed.common.companions.Prefs
 
 val prefs: Prefs by lazy {
     App.prefs!!

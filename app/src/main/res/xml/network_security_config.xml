@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Needed because google book images come with http url, and are redirected in the browser on https -->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">books.google.com</domain>
+    </domain-config>
+</network-security-config>

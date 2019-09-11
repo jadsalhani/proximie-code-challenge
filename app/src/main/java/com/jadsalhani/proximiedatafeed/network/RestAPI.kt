@@ -1,4 +1,4 @@
-package com.jadsalhani.proximiedatafeed.common.network
+package com.jadsalhani.proximiedatafeed.network
 
 import com.jadsalhani.proximiedatafeed.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

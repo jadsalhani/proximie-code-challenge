@@ -1,4 +1,4 @@
-package com.jadsalhani.proximiedatafeed.features.home.models
+package com.jadsalhani.proximiedatafeed.domain.volume
 
 data class VolumeAccessInfo(
     val country: String,

@@ -1,4 +1,4 @@
-package com.jadsalhani.proximiedatafeed.features.home
+package com.jadsalhani.proximiedatafeed.features.feed
 
 import android.app.SearchManager
 import android.content.Intent
@@ -11,16 +11,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jadsalhani.proximiedatafeed.R
-import com.jadsalhani.proximiedatafeed.features.home.models.Volume
-import com.jadsalhani.proximiedatafeed.features.home.network.BooksRestAPI
-import com.jadsalhani.proximiedatafeed.features.home.view.VolumeAdapter
-import kotlinx.android.synthetic.main.activity_home.*
+import com.jadsalhani.proximiedatafeed.domain.volume.Volume
+import com.jadsalhani.proximiedatafeed.network.volume.VolumeAPIImpl
+import kotlinx.android.synthetic.main.activity_feed.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class HomeActivity : AppCompatActivity() {
-    private val api: BooksRestAPI = BooksRestAPI()
+class FeedActivity : AppCompatActivity() {
+    private val apiImpl: VolumeAPIImpl =
+        VolumeAPIImpl()
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_feed)
 
         viewManager = LinearLayoutManager(this)
 
@@ -75,7 +75,7 @@ class HomeActivity : AppCompatActivity() {
             val volumes = getVolumes(searchQuery)
 
             if (volumes != null) {
-                viewAdapter = VolumeAdapter(volumes)
+                viewAdapter = FeedAdapter(volumes)
 
                 home_progress_bar.visibility = View.GONE
 
@@ -96,7 +96,7 @@ class HomeActivity : AppCompatActivity() {
 
     private suspend fun getVolumes(searchQuery: String): Array<Volume>? {
         try {
-            val result = api.getVolumesAsync(searchQuery).await()
+            val result = apiImpl.getVolumesAsync(searchQuery).await()
             return result.items
         } catch (e: Throwable) {
             Log.e("API ERROR", e.localizedMessage!!)

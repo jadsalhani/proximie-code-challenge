@@ -1,4 +1,4 @@
-package com.jadsalhani.proximiedatafeed.features.home.models
+package com.jadsalhani.proximiedatafeed.domain.volume
 
 data class Volume(
     val kind: String,

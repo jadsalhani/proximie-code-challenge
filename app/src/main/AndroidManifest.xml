@@ -2,31 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jadsalhani.proximiedatafeed">
     <!-- To auto-complete the email text field in the loginAsync form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
-        android:name="com.jadsalhani.proximiedatafeed.App"
+        android:name=".application.App"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-        <activity android:name="com.jadsalhani.proximiedatafeed.features.MainActivity">
+        <activity android:name=".features.feed.FeedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
-        <activity
-            android:name="com.jadsalhani.proximiedatafeed.features.home.HomeActivity"
-            android:label="@string/title_activity_home">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+        <activity android:name=".features.details.DetailsActivity">
         </activity>
     </application>
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
 </manifest>
