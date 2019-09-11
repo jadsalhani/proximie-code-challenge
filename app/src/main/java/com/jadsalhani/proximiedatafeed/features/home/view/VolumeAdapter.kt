@@ -49,7 +49,7 @@ class VolumeAdapter(private val myDataset: Array<Volume>) :
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.volumeTitle.text = myDataset[position].volumeInfo.title
-        if(myDataset[position].volumeInfo.authors != null) {
+        if (myDataset[position].volumeInfo.authors != null) {
             holder.volumeAuthors.text = myDataset[position].volumeInfo.authors?.joinToString()
         }
     }
