@@ -4,6 +4,7 @@ import com.jadsalhani.proximiedatafeed.domain.volume.Volume
 import com.jadsalhani.proximiedatafeed.network.RestAPI
 import com.jadsalhani.proximiedatafeed.network.volume.response.GetVolumesAPIResponse
 import kotlinx.coroutines.Deferred
+import okhttp3.ResponseBody
 
 class VolumeAPIImpl : RestAPI() {
 
@@ -11,10 +12,14 @@ class VolumeAPIImpl : RestAPI() {
         VolumeAPI::class.java)
 
     fun getVolumesAsync(searchQuery: String): Deferred<GetVolumesAPIResponse> {
-        return volumeAPI.getVolumes(searchQuery)
+        return volumeAPI.getVolumesAsync(searchQuery)
     }
 
     fun getVolumeByIDAsync(volumeID: String): Deferred<Volume> {
-        return volumeAPI.getVolumeByID(volumeID)
+        return volumeAPI.getVolumeByIDAsync(volumeID)
+    }
+
+    fun downloadVolumePDFAsync(fileUrl: String): Deferred<ResponseBody> {
+        return volumeAPI.downloadVolumePDFAsync(fileUrl)
     }
 }

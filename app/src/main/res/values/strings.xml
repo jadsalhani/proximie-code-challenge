@@ -8,6 +8,6 @@
     <string name="image_placeholder_hint">Book Thumbnail Image</string>
 
     <!--Button Texts-->
-    <string name="volume_download_btn_text">Download PDF</string>
+    <string name="volume_download_btn_text">View PDF Version</string>
 
 </resources>
