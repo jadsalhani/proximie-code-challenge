@@ -1,6 +1,10 @@
-# Android Example Application
+# Proximie Code Challenge
 
-This is an example Android Application README to show briefly the sections your app README should contain.
+[![Build Status](https://travis-ci.com/jadsalhani/proximie-code-challenge.svg?branch=master)](https://travis-ci.com/jadsalhani/proximie-code-challenge) 
+
+## Google Books Browser 
+
+This is basic application that integrates with Google Books API and lets your search and browse books
 
 ## Installation
 Clone this repository and import into **Android Studio**
